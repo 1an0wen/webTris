@@ -1,10 +1,10 @@
 <?php
-	//pull json data from external website
+	//pull json site data
 	$content=file_get_contents("http://webtris.highwaysengland.co.uk/api/v1.0/sites");
 	$data=json_decode($content, true);
 	$num = $data['row_count'];
 	
-	//explode data into arrays
+	//explode multi-dimentional arrays
 	for ($i = 0; $i < $num; $i++) {
 		$id[$i] = $data['sites'][$i]['Id'];
 		$name[$i] = $data['sites'][$i]['Name'];
